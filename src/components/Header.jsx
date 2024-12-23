@@ -1,4 +1,5 @@
 import React from "react";
+import { FiShoppingCart } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex-grow mx-40 hidden md:flex items-center">
+        <div className="flex-grow lg:mx-40 md:mx-20 hidden md:flex items-center">
           <input
             type="text"
             placeholder="Search..."
@@ -26,10 +27,13 @@ const Header = () => {
         </div>
 
         {/* Sign-In Button */}
-        <div className="flex-shrink-0 space-x-3">
+        <div className="flex-shrink-0 space-x-5">
           <Link to="/cart">
-            <button className="px-4 py-1 font-medium text-white bg-blue-600 rounded hover:bg-blue-500">
-              cart
+            <button className="relative top-2">
+              <FiShoppingCart className="text-xl" />
+              <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-sky-500 rounded-full -top-3 -end-3">
+                0
+              </div>
             </button>
           </Link>
           <Link to="/login">
